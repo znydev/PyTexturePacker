@@ -5,6 +5,9 @@ PyTexturePacker is an open source python package, released under the MIT License
 
 A subset of feature of TexturePacker_ has been implemented in this package.
 
+This fork adds support for a json file format used by mapbox-gl 
+see 
+
 .. _TexturePacker: https://www.codeandweb.com/texturepacker
 
 Features
@@ -133,11 +136,13 @@ Contribute
 Any types of contribution are welcome. Thanks.
 
 
+
 Support
 =======
 
 If you are having issues, please let us know.
 Please feel free to contact me. email: quanyongh@foxmail.com
+
 
 
 License
