@@ -36,6 +36,36 @@ class AtlasInterface(object):
 
         self.image_rect_list = []
 
+
+    def dump_json(self, texture_file_name="", input_base_path=None):
+
+        import os
+
+
+        json_data = {}
+
+        for image_rect in self.image_rect_list:
+            width, height = (image_rect.width, image_rect.height) if not image_rect.rotated else (image_rect.height, image_rect.width)
+
+            path = image_rect.image_path
+            if input_base_path is None:
+                _, path = os.path.split(path)
+            else:
+                path = os.path.relpath(os.path.abspath(path), os.path.abspath(input_base_path))
+
+            fname, ext = os.path.splitext(path)     
+            
+            json_data[fname] = {
+            "width":width,
+            "height":height,
+            "x":image_rect.x,
+            "y":image_rect.y,
+            "pixelRatio":1,
+            "visible":True            
+            }
+
+        return json_data
+
     def dump_plist(self, texture_file_name="", input_base_path=None):
         import os
 

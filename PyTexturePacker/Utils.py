@@ -47,6 +47,19 @@ def load_images_from_dir(dir_path):
     return load_images_from_paths(image_rect_path)
 
 
+def save_json(data_dict, file_path):
+    """
+    save a dict as a plist file
+    :param data_dict: dict data
+    :param file_path: plist file path to save
+    :return:
+    """
+    import json
+    print("saving json as " + file_path)
+    f = open(file_path,'w')
+    json.dump(data_dict, f )
+    f.close()
+
 def save_plist(data_dict, file_path):
     """
     save a dict as a plist file

@@ -186,6 +186,7 @@ class PackerInterface(object):
                 packed_image = Utils.alpha_bleeding(packed_image)
 
             Utils.save_plist(packed_plist, os.path.join(output_path, "%s.plist" % texture_file_name))
+            Utils.save_json(packed_json, os.path.join(output_path, "%s.json" % texture_file_name))
             Utils.save_image(packed_image, os.path.join(output_path, "%s%s" % (texture_file_name, self.texture_format)))
 
     def multi_pack(self, pack_args_list):
