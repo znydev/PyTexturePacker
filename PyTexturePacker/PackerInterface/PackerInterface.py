@@ -180,6 +180,7 @@ class PackerInterface(object):
             texture_file_name = output_name if "%d" not in output_name else output_name % i
 
             packed_plist = atlas.dump_plist("%s%s" % (texture_file_name, self.texture_format), input_base_path)
+            packed_json = atlas.dump_json("%s%s" % (texture_file_name, self.texture_format), input_base_path)
             packed_image = atlas.dump_image(self.bg_color)
 
             if self.reduce_border_artifacts:
